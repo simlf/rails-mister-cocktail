@@ -2,9 +2,10 @@
 
 <ul>
   <% @cocktail.doses.each do |dose| %>
+  <%= cl_image_tag @restaurant.photo, height: 300, crop: :fill %>
     <li><%= dose.description %> of <%= dose.ingredient.name %> - <%= link_to 'Delete', dose_path(dose), method: :delete %></li>
   <% end %>
 </ul>
 
-<%= link_to 'See all cocktails', cocktails_path %>
+<%= link_to 'See all cocktails', root_path %>
 <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %>
