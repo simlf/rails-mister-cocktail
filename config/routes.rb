@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :cocktails, only: [:index, :show, :new, :create] do
+
+  root 'cocktails#index'
+
+  resources :cocktails, only: [ :show, :new, :create ] do
     # GET "cocktails/42/doses/new"
     # POST "cocktails/42/doses"
     resources :doses, only: [:new, :create]
