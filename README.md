@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+create_table :doses do |t|
+      t.string :description
+      t.references :doses, foreign_key: true
+      t.references :ingredients, foreign_key: true
+
+      t.timestamps
